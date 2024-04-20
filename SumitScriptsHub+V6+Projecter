@@ -1,0 +1,143 @@
+wait(1.2)
+
+game.StarterGui:SetCore("SendNotification", {
+
+Title = "Wellcome..."; -- the title (ofc)
+
+Text = "SumitScripts Hub Is Back"; -- what the text says (ofc)
+
+Icon = ""; -- the image if u want.
+
+Duration = 5; -- how long the notification should in secounds
+
+})
+
+game.StarterGui:SetCore("SendNotification", {
+
+Title = "Information"; -- the title (ofc)
+
+Text = "Its Took Me So Time Because Blade ball Open AntiCheat"; -- what the text says (ofc)
+
+Icon = ""; -- the image if u want.
+
+Duration = 5; -- how long the notification should in secounds
+
+})
+
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local Window = Library:NewWindow("💸 SumitScripts Hub V6 💸")
+local Section = Window:NewSection("⚔️ Main")
+
+Section:CreateToggle("Auto Parry", function(value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
+print(value)
+end)
+
+Section:CreateToggle("Auto Win", function(value)
+getgenv().god = true
+while getgenv().god and task.wait() do
+    for _,ball in next, workspace.Balls:GetChildren() do
+        if ball then
+            if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position, ball.Position)
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Highlight") then
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = ball.CFrame * CFrame.new(0, 0, (ball.Velocity).Magnitude * -0.5)
+                    game:GetService("ReplicatedStorage").Remotes.ParryButtonPress:Fire()
+                end
+            end
+        end
+    end
+end
+print(value)
+end)
+
+Section:CreateToggle("Auto Spam", function(value)
+loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+print(value)
+end)
+
+Section:CreateToggle("Auto detect Spam", function(value)
+loadstring(game:HttpGet("https://pastebin.com/raw/N4yBrKuw"))()
+print(value)
+end)
+
+Section:CreateToggle("Hold to Spam", function(value)
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Script by SumitScripts",
+    Text = "Hold Block button to Spam",
+    Duration = 5
+})
+
+getgenv().SpamSpeed = 25 -- 1-25
+
+if not getgenv().exeSpam then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Toggle%20Block%20Spam",true))()
+end
+
+getgenv().exeSpam = true
+print(value)
+end)
+
+local Section = Window:NewSection("🎮 Misc")
+
+Section:CreateToggle("destroy all particles", function(value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Destroy%20Particle%20Emitters",true))()
+print(value)
+end)
+
+Section:CreateToggle("Aiming Mechanism", function(value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/M%3ABlade%20Ball%20Mechanism",true))()
+print(value)
+end)
+
+Section:CreateToggle("AntiLag", function(value)
+-- Made by RIP#6666
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true -- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+    ["No Explosions"] = true, -- Makes Explosion's invisible
+    ["No Clothes"] = true, -- Removes Clothing from the game
+    ["Low Water Graphics"] = true, -- Removes Water Quality
+    ["No Shadows"] = true, -- Remove Shadows
+    ["Low Rendering"] = true, -- Lower Rendering
+    ["Low Quality Parts"] = true -- Lower quality parts
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+print(value)
+end)
+
+Section:CreateToggle("AntiAfk", function(value)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Proxylol/OtherScripts/main/AntiAfk.lua'),true))()
+print(value)
+end)
+
+local Section = Window:NewSection("⛹️‍♂️ Player Esp")
+
+Section:CreateToggle("Player Box Esp", function(value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp"))();
+print(value)
+end)
+
+local Section = Window:NewSection("Credits")
+
+Section:CreateButton("Youtube : @SumitScriptsYT", function()
+print("Clicked")
+end)
+
+Section:CreateButton("Scriptblox : @SumitScripts", function()
+print("Clicked")
+end)
