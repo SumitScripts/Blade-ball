@@ -1,24 +1,17 @@
+--// Notify
+game.StarterGui:SetCore("SendNotification", {
+Title = "Made by SumitScripts",
+Text = "Updates Coming soon / Open Credits to see our team",
+Duration = 5,
+})
+
 --[[ 
 Modded And Scripted By SumitScripts Pevaiqo Here All Updates Changed
 
 l -  Update Note - l
 
-Changes/Fix -
-
- [+] Auto Parry Changes
- [+] Fix Speed And Fly V3 
- [+] Ui Library Changes
-
-Added - 
-
- [+] Added - Minecraft Hit Sound
- [+] Added - Kill Effect
- [+] Added - Trail
- [+] Added - Night Mode
-
-Removed -
-
- [+] Removed - Auto Win And More (i Deleted So Many Things because all patched)
+Bugs Fixed - 3
+ [+] Added - Visual Parry
 
 ]]--
 
@@ -82,7 +75,7 @@ end
 -- Ui Library
 
 local  Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("SumitScripts Hub 🌠 - New Classic V1.10", "Midnight")
+local Window = Library.CreateLib("SumitScripts Hub 🌠 - Overpowered V1.11", "Midnight")
 
 local Tab = Window:NewTab("Combat")
 local Tab2 = Window:NewTab("Shop")
@@ -95,7 +88,7 @@ local World = Tab3:NewSection("World")
 
 local Credits = Tab4:NewSection("Created By SumitScripts")
 local Credits1 = Tab4:NewSection("Thanks for Aries for make auto parry")
-local Credits2 = Tab4:NewSection("Everything Made by me")
+local Credits2 = Tab4:NewSection("Visual By Alex")
 
 function initializate(dataFolder_name: string)
     local nurysium_Data = Instance.new('Folder', game:GetService('CoreGui'))
@@ -194,6 +187,19 @@ Combat:NewToggle("Auto Parry", "Credit Avie Hub", function(toggled)
     getgenv().aura_Enabled = toggled
 end)
 
+Combat:NewButton("Visual Parry (By Alex)", "ButtonInfo", function()
+getgenv().Paws = {
+    ["AutoParry"] = true,
+    ["PingBased"] = true,
+    ["PingBasedOffset"] = 0,
+    ["DistanceToParry"] = 0.4,
+    ["BallSpeedCheck"] = true,
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Alexisisback/Blade-ball-Auto-parry-Etc/main/Manual%20spam%2BAuto%20parry"))()
+    print("Clicked")
+end)
+
+
 Combat:NewToggle("Minecraft Hit Sound", "ToggleInfo", function(toggled)
     getgenv().hit_sound_Enabled = toggled
 end)
@@ -202,13 +208,13 @@ Combat:NewToggle("Hit Effect", "ToggleInfo", function(toggled)
     getgenv().hit_effect_Enabled = toggled
 end)
 
-Shop:NewButton("SwordCrate", "ButtonInfo", function()
+Shop:NewButton("SwordCrate (80 coins)", "ButtonInfo", function()
 
 SwordCrateManual()
     print("Clicked")
 end)
 
-Shop:NewButton("ExplosionCrate", "ButtonInfo", function()
+Shop:NewButton("ExplosionCrate (80 coins)", "ButtonInfo", function()
 
 ExplosionCrateManual()
     print("Clicked")
@@ -443,7 +449,7 @@ Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
 Toggle.Size = UDim2.new(0, 90, 0, 38)
 Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "ui toggle"
+Toggle.Text = "open/close"
 Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 28.000
 Toggle.Draggable = true
