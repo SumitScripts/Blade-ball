@@ -32,10 +32,8 @@ local local_player = Players.LocalPlayer
 local camera = workspace.CurrentCamera
 
 local autoparry_Data = nil
-
 local closest_Entity = nil
 local parry_remote = nil
-
 getgenv().aura_Enabled = false
 
 local Services = {
